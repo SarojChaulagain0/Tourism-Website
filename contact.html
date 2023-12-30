@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/80f94435b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <img src="img/logo.png" alt="Nepal Tourism Logo" width="40" height="40">
+        <h5>Tourism website for Nepal</h5>
+    </div>
+    <nav>
+      <ul>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="flight.html">Flights</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <h2 style="text-align: center;">Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Phone: 888-0823-1231</p>
+        <p>Email: info@explorenepal.com</p>
+        <p>Address: kathmandu,Nepal</p>
+      </div>
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form id="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="flight.html">Flights</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p> Main St</p>
+      <p>Kathmandu,Nepal</p>
+      <p>Phone: +977- 981234121</p>
+      <p>Email: info@student.com</p>
+      <ul class="social-media-icons">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  
+    <div id="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594654.9089254555!2d81.48903789759905!3d28.37682751210797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995e8c77d2e68cf%3A0x34a29abcd0cc86de!2sNepal!5e0!3m2!1sen!2snp!4v1683436095306!5m2!1sen!2snp" width="600" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!nameInput.value) {
+        alert("Please enter your name.");
+        nameInput.focus();
+        return false;
+      }
+
+      if (!emailInput.value) {
+        alert("Please enter your email.");
+        emailInput.focus();
+        return false;
+      }
+
+      if (!validateEmail(emailInput.value)) {
+        alert("Please enter a valid email.");
+        emailInput.focus();
+        return false;
+      }
+
+      if (!messageInput.value) {
+        alert("Please enter your message.");
+        messageInput.focus();
+        return false;
+      }
+
+      alert("Thank you for contacting us!");
+      form.reset();
+    });
+
+    function validateEmail(email) {
+      const re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+  </script>
+
+</body>
+</html>
